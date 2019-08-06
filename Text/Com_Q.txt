@@ -1,6 +1,0 @@
-Q1: How do you check the directory you are currently in from the terminal?
-1) cd
-2) ls
-3) dir
-4) pwd
-
