@@ -1,5 +1,5 @@
-# The Great Quizzes
-CA2 project for my module Fundamentals of Programming.:smile:
+# Some Quiz Thing
+Learning Javascript so I made a thing in it.
 
 A quiz application written in javascript that runs in the terminal. (Quiz.js)
 ## Topics
