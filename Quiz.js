@@ -1,7 +1,7 @@
-var readline = require('readline-sync');
+let readline = require('readline-sync');
 //Hi cher there's a bonus feature for debugging purposes that unlocks everything along with unlimited passes. Just need to make sure the time is appropriate for coffee
-var coffeetime = false;
-var name = AskName();
+let coffeetime = false;
+let name = AskName();
 if (name === 'Ex-Google Techlead'){ //coffeetime = true
     coffeetime = true;
     free_pass = 999;
@@ -30,15 +30,15 @@ class SortingHat{ //PERSONALITY QUIZ THAT TOOK TOO MUCH TIME TO MAKE
     constructor(name, Q1, Q2, Q3, Q4, Q5){
         this.name = name; //Quiz name
         this.questions = [Q1, Q2, Q3, Q4, Q5]; //Stores the questions from MCQ class
-        var gryffindor = [2, 1, 4, 3, 1]; //Answers for Gryffindor
-        var hufflepuff = [4, 3, 2, 4, 3]; //Refer above
-        var ravenclaw = [1, 2, 3, 1, 4]; //Already read above
-        var slytherin = [3, 4, 1, 2, 2]; //can this stop
+        let gryffindor = [2, 1, 4, 3, 1]; //Answers for Gryffindor
+        let hufflepuff = [4, 3, 2, 4, 3]; //Refer above
+        let ravenclaw = [1, 2, 3, 1, 4]; //Already read above
+        let slytherin = [3, 4, 1, 2, 2]; //can this stop
         this.houses = [gryffindor, hufflepuff, ravenclaw, slytherin]; //Stores answers for all houses muahaha
         for (var i = 0; i<4; i++){ //Storing the answers as a string
-            var temphouse = this.houses[i];
-            var tempanswers = [];
-            for (var j = 0; j<5; j++){
+            let temphouse = this.houses[i];
+            let tempanswers = [];
+            for (let j = 0; j<5; j++){
                 tempanswers.push(this.questions[j].options[temphouse[j]-1])
             }
             this.houses[i] = tempanswers;
@@ -95,7 +95,7 @@ class Quiz{ //Everything the Quiz does is in here
         if (total_score >= 50){ //unlock if wizard
             this.quizzes = [this.computer_commando, this.literature, this.language, this.yer_a_wizard];
         }
-        var length = this.quizzes.length; //because this.quizzes.length is a pain to type and I need to change the length oso for the extra options
+        let length = this.quizzes.length; //because this.quizzes.length is a pain to type and I need to change the length oso for the extra options
         console.log("\nWhich quiz do you want to attempt?\n(0) Exit");
         for (var i = 0; i<length; i++){
             console.log(`(${i+1}) ${this.quizzes[i].name}`); //Shows all the available quizzes
@@ -115,7 +115,7 @@ class Quiz{ //Everything the Quiz does is in here
         }
 
         if (choice != 0 && choice <= this.quizzes.length){ //Stores all the details for the quiz that is going to be attempted.
-            var quiz = this.quizzes[choice-1]; //The selected quiz variable
+            let quiz = this.quizzes[choice-1]; //The selected quiz variable
             this.qname = quiz.name; //Quiz name
             this.ask_q = quiz.questions; //Quiz questions
             if (choice-1 != 3){
@@ -187,9 +187,9 @@ class Quiz{ //Everything the Quiz does is in here
             }
         }
         else if (respond === 'J' || respond === 'j' && canchange){ //Change question number
-            var validresponse = false; //keeps the loop going I guess
+            let validresponse = false; //keeps the loop going I guess
             while (!validresponse){ //While not valid
-                var change_i = readline.question("\nWhich question numbers would you like to go to? (X to cancel)\n> "); //Input question number here or cancel
+                let change_i = readline.question("\nWhich question numbers would you like to go to? (X to cancel)\n> "); //Input question number here or cancel
                 if (change_i === 'X' || change_i === 'x'){ //Nothing happened so return to question
                     validresponse = true;
                 }
@@ -228,8 +228,8 @@ class Quiz{ //Everything the Quiz does is in here
     DoQuiz(){ //Conducts the quiz
         var i = 0;
         this.responds = [];
-        var respond;
-        var canchange = true;
+        let respond;
+        let canchange = true;
         check_pass = new Array(5);
         console.log(`This is the "${this.qname}" quiz!`);
         while (i<5){
@@ -247,9 +247,9 @@ class Quiz{ //Everything the Quiz does is in here
 
     BecomeWizard(){ //Does Sorting hat things
         var i = 0;
-        var canchange = true;
+        let canchange = true;
         this.responds = [];
-        var respond;
+        let respond;
         //Random sorting hat song
         console.log("\nYou can keep your bowlers black,\nYour top hats sleek and tall,\nFor I’m the Hogwarts Sorting Hat\nAnd I can cap them all.\nThere’s nothing hidden in your head\nThe Sorting Hat can’t see,\nSo try me on and I will tell you\nWhere you ought to be.")
         
@@ -261,10 +261,10 @@ class Quiz{ //Everything the Quiz does is in here
     }
 
     TheSortingHatSays(){ //The sorting hat has spoken
-        var score = 0
-        var housetally = new Array(4).fill(0);
+        let score = 0
+        let housetally = new Array(4).fill(0);
         for (var i = 0; i<5; i++){
-            for (var j = 0; j<4; j++){
+            for (let j = 0; j<4; j++){
                 if (this.ans[j][i] == this.responds[i]){
                     housetally[j] += 5;
                 }
@@ -283,7 +283,7 @@ class Quiz{ //Everything the Quiz does is in here
             }
         }
 
-        var description;
+        let description;
         switch(house) {
             case 0:
                 house = `${parseInt(score/25*100)}% Gryffindor`
@@ -305,18 +305,18 @@ class Quiz{ //Everything the Quiz does is in here
     }
 
     Submit(){ //Do you want to submit?
-        var submit_q;
-        var canchange = false;
+        let submit_q;
+        let canchange = false;
         console.log("Done already?");
 
         while (submit_q != 0){
-            var nvr_ans = [];
+            let nvr_ans = [];
             for (var i = 0; i < this.ans.length; i++){ //Checks for empty questions
                 if (this.responds[i] === undefined){
                     nvr_ans.push(i+1);
                 }
             }
-            if (nvr_ans.length > 0){ //Prmpts if empty questions
+            if (nvr_ans.length > 0){ //Prompts if empty questions
                 console.log(`Looks like you left the following question(s) not done!\nQ${nvr_ans.join(', Q')}`)
             }
             submit_q = readline.questionInt(`\n(0) Submit\n(1-${this.ask_q.length}) Change answer\n> `);
@@ -324,7 +324,7 @@ class Quiz{ //Everything the Quiz does is in here
                 console.log("I don't think that's an option...");
             }
             else if (submit_q > 0){
-                var check = false
+                let check = false
                 while (check === false){
                     this.printQuestion(submit_q-1);
                     if (check_pass[submit_q-1] === true){
@@ -332,7 +332,7 @@ class Quiz{ //Everything the Quiz does is in here
                         check = true;
                     }
                     else{
-                        var respond = readline.question(`\n> `);
+                        let respond = readline.question(`\n> `);
                         if (submit_q == this.checkAns(submit_q-1, respond, canchange)){
                             check = true;
                         }
@@ -347,8 +347,8 @@ class Quiz{ //Everything the Quiz does is in here
     }
 
     Results(){ //Calculates and returns the result of the quiz
-        var score = 0
-        var returnedans = [];
+        let score = 0
+        let returnedans = [];
         for (var i = 0; i<5; i++){
             console.log(`\nQ${i+1}: ${this.ask_q[i].question}`);
             if (this.responds[i] === undefined){
@@ -396,8 +396,8 @@ class Quiz{ //Everything the Quiz does is in here
 }
 
 function AskName(){ //Prompts for the name
-    var name = readline.question("What is your name?\n> ").trim(); //Input name and it can't be blank
-    var check; //Temp variable to store responds
+    let name = readline.question("What is your name?\n> ").trim(); //Input name and it can't be blank
+    let check; //Temp variable to store responds
     while (check != "Y" && check != "y"){ //Plz confirm
         while (name === ""){
             name = readline.question("Please don't leave it blank!\n> ").trim(); //No blanks
@@ -425,15 +425,15 @@ function CalcScore(){
     }
 }
 
-var the_great_quiz = new Quiz();
-var all_scores = new Array(3);
-var total_score = 0;
-var free_pass = 15;
-var wizard = false; //Check if personality quiz is being done
-var choice;
-var history = [];
-var house;
-var check_pass;
+let the_great_quiz = new Quiz();
+let all_scores = new Array(3);
+let total_score = 0;
+let free_pass = 5;
+let wizard = false; //Check if personality quiz is being done
+let choice;
+let history = [];
+let house;
+let check_pass;
 
 while (choice != 0){
     CalcScore();
