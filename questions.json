@@ -129,5 +129,265 @@
                 ]
             }
         ]
+    },
+    {
+        "category": "Languish in Literature",
+        "mcqs": [
+            {
+                "question": "A pound of man's flesh taken from a man \nIs not so estimable, profitable neither, \nAs flesh of muttons, beefs, or goats\n Which play is this from?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "Merchant of Venice",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "Hamlet",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "Romeo and Juliet",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "Macbeth",
+                        "check": true
+                    }
+                ]
+            },
+            {
+                "question": "Who write Pride and Prejudice?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "Enid Blyton",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "Jane Austen",
+                        "check": true
+                    },
+                    {
+                        "id": 2,
+                        "text": "Shakespeare",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "Charlotte Bronte",
+                        "check": false
+                    }
+                ]
+            },
+            {
+                "question": "What is the \"temperature at which book-paper catches fire, and burns\"",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "232 celsius",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "427 farenheit",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "farenheit 451",
+                        "check": true
+                    },
+                    {
+                        "id": 3,
+                        "text": "celsius 167",
+                        "check": false
+                    }
+                ]
+            },
+            {
+                "question": "To be or not to be, that is the question.\nWhether tis' nobler in the mind to suffer\n___________________________ (Fill in the blank)",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "That flesh is heir to, 'tis a consummation",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "For who would bear the whips and scorns of time",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "The heart-ache and the thousand natural shocks",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "The slings and arrows of outrageous fortune",
+                        "check": true
+                    }
+                ]
+            },
+            {
+                "question": "How old was Anne Frank when she wrote her last entry in her diary?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "17",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "14",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "23",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "15",
+                        "check": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Polyglot around the world",
+        "mcqs": [
+            {
+                "question": "Which language is \"très bien\" in?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "Spanish",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "French",
+                        "check": true
+                    },
+                    {
+                        "id": 2,
+                        "text": "Irish",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "Portuguese",
+                        "check": false
+                    }
+                ]
+            },
+            {
+                "question": "\"Vergangenheitsbewältigung\", a German term coined after 1945. What is the meaning behind it?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "Atrocities have been committed",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "Do no wrong",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "Struggles to overcome the past",
+                        "check": true
+                    },
+                    {
+                        "id": 3,
+                        "text": "None of the above",
+                        "check": false
+                    }
+                ]
+            },
+            {
+                "question": "How many major Chinse dialects are spoken in China?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "2",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "4",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "5",
+                        "check": 3
+                    },
+                    {
+                        "id": 3,
+                        "text": "7",
+                        "check": false
+                    }
+                ]
+            },
+            {
+                "question": "The longest English without an e to date is \"floccinaucinihilipilification\". What does this exactly mean?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "A habit of estimating something as worthless",
+                        "check": true
+                    },
+                    {
+                        "id": 1,
+                        "text": "Indulging only very moderately in something, especially food and drink.",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "A lung disease",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "The fear of long words",
+                        "check": false
+                    }
+                ]
+            },
+            {
+                "question": "Last question! What does \"polyglot\" mean?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "The ability to speak many languages",
+                        "check": true
+                    },
+                    {
+                        "id": 1,
+                        "text": "Glutton for specific food",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "Many mistakes",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "Greek tongue",
+                        "check": false
+                    }
+                ]
+            }
+        ]
     }
 ]
