@@ -1,4 +1,6 @@
-let readline = require('readline-sync');
+const readline = require('readline-sync');
+const fs = require('fs')
+questions_json = JSON.parse(fs.readFileSync('questions.json'))
 //Hi cher there's a bonus feature for debugging purposes that unlocks everything along with unlimited passes. Just need to make sure the time is appropriate for coffee
 let coffeetime = false;
 let name = AskName();
@@ -48,28 +50,28 @@ class SortingHat{ //PERSONALITY QUIZ THAT TOOK TOO MUCH TIME TO MAKE
 
 class Quiz{ //Everything the Quiz does is in here
     constructor(){
-        this.computer_commando = new Category("Computer Commando", //This is the category name
-                    (new MCQ("The UNIX command ___ will copy the file", "cls", "cp", "md", "sudo")), //This is a question.
-                    (new MCQ("Which is the valid command prompt command that will list the files in your current working directory?", "ls", "dir", "cd", "cls")),
-                    (new MCQ("The command ____ performs the same function in BOTH Linux and Windows", "pwd", "cat", "del", "cd")),
-                    (new MCQ("Which of the following text editor when used in the terminal will open a new window in Linux?", "gedit", "Emacs", "Nano", "Vim")),
-                    (new MCQ("Which is the most secure way to transfer files across linux systems", "FTP", "telnet", "SSH", "rcp")),
+        this.computer_commando = new Category(questions_json[0].category, //This is the category name
+                    (new MCQ(questions_json[0].mcqs[0].question, questions_json[0].mcqs[0].choices[0].text, questions_json[0].mcqs[0].choices[1].text,  questions_json[0].mcqs[0].choices[2].text,  questions_json[0].mcqs[0].choices[3].text)),
+                    (new MCQ(questions_json[0].mcqs[1].question, questions_json[0].mcqs[1].choices[0].text, questions_json[0].mcqs[1].choices[1].text,  questions_json[0].mcqs[1].choices[2].text,  questions_json[0].mcqs[1].choices[3].text)),
+                    (new MCQ(questions_json[0].mcqs[2].question, questions_json[0].mcqs[2].choices[0].text, questions_json[0].mcqs[2].choices[1].text,  questions_json[0].mcqs[2].choices[2].text,  questions_json[0].mcqs[2].choices[3].text)),
+                    (new MCQ(questions_json[0].mcqs[3].question, questions_json[0].mcqs[3].choices[0].text, questions_json[0].mcqs[3].choices[1].text,  questions_json[0].mcqs[3].choices[2].text,  questions_json[0].mcqs[3].choices[3].text)),
+                    (new MCQ(questions_json[0].mcqs[4].question, questions_json[0].mcqs[4].choices[0].text, questions_json[0].mcqs[4].choices[1].text,  questions_json[0].mcqs[4].choices[2].text,  questions_json[0].mcqs[4].choices[3].text)),
                     [2, 2, 4, 1, 3]); //Reference numbers when storing the answer strings
 
         this.literature = new Category("Languish in Literature",
-                    (new MCQ(`"A pound of man's flesh taken from a man \nIs not so estimable, profitable neither, \nAs flesh of muttons, beefs, or goats"\n Which play is this from?`, "Merchant of Venice", "Hamlet", "Romeo and Juliet", "Macbeth")),
-                    (new MCQ("Who wrote Pride and Prejudice?", "Jane Austen", "Shakespeare", "Enid Blyton", "Charlotte Bronte")),
-                    (new MCQ('What is the "temperature at which book-paper catches fire, and burns"?', "232 celsius", "427 farenheit", "farehneit 451", "celsius 167")), 
-                    (new MCQ(`"To be or not to be, that is the question.\nWhether tis' nobler in the mind to suffer\n___________________________ (Fill in the blank)`, "That flesh is heir to, 'tis a consummation", "For who would bear the whips and scorns of time,", "The heart-ache and the thousand natural shocks", "The slings and arrows of outrageous fortune")),
-                    (new MCQ("How old was Anne Frank when she wrote her last entry in her diary?", "17", "14", "23", "15")),
+                    (new MCQ(questions_json[1].mcqs[0].question, questions_json[1].mcqs[0].choices[0].text, questions_json[1].mcqs[0].choices[1].text,  questions_json[1].mcqs[0].choices[2].text,  questions_json[1].mcqs[0].choices[3].text)),
+                    (new MCQ(questions_json[1].mcqs[1].question, questions_json[1].mcqs[1].choices[0].text, questions_json[1].mcqs[1].choices[1].text,  questions_json[1].mcqs[1].choices[2].text,  questions_json[1].mcqs[1].choices[3].text)),
+                    (new MCQ(questions_json[1].mcqs[2].question, questions_json[1].mcqs[2].choices[0].text, questions_json[1].mcqs[2].choices[1].text,  questions_json[1].mcqs[2].choices[2].text,  questions_json[1].mcqs[2].choices[3].text)),
+                    (new MCQ(questions_json[1].mcqs[3].question, questions_json[1].mcqs[3].choices[0].text, questions_json[1].mcqs[3].choices[1].text,  questions_json[1].mcqs[3].choices[2].text,  questions_json[1].mcqs[3].choices[3].text)),
+                    (new MCQ(questions_json[1].mcqs[4].question, questions_json[1].mcqs[4].choices[0].text, questions_json[1].mcqs[4].choices[1].text,  questions_json[1].mcqs[4].choices[2].text,  questions_json[1].mcqs[4].choices[3].text)),
                     [1, 1, 3, 4, 4]);
 
         this.language = new Category("Polyglot Around The World",
-                    (new MCQ(`Which language is "très bien" in?`, "Spanish", "Irish", "French", "Portuguese")),
-                    (new MCQ(`"Vergangenheitsbewältigung", a German term coined after 1945. What is the meaning behind it?`, "Atrocities have been committed", "Struggles to overcome the past", "Do no wrong", "None of the above")),
-                    (new MCQ("How many major Chinese dialects are spoken in China?", "2", "4", "5", "7")),
-                    (new MCQ(`The longest English without an e to date is "floccinaucinihilipilification". What does this exactly mean?`, 'A habit of estimating something as worthless', 'Indulging only very moderately in something, especially food and drink.', 'A lung disease', 'The fear of long words')),
-                    (new MCQ(`Last question! What does "polyglot" mean?`, "Glutton for specific food", "Many mistakes", "Greek tongue", "The ability to speak many languages")),
+                    (new MCQ(questions_json[2].mcqs[0].question, questions_json[2].mcqs[0].choices[0].text, questions_json[2].mcqs[0].choices[1].text,  questions_json[2].mcqs[0].choices[2].text,  questions_json[2].mcqs[0].choices[3].text)),
+                    (new MCQ(questions_json[2].mcqs[1].question, questions_json[2].mcqs[1].choices[0].text, questions_json[2].mcqs[1].choices[1].text,  questions_json[2].mcqs[1].choices[2].text,  questions_json[2].mcqs[1].choices[3].text)),
+                    (new MCQ(questions_json[2].mcqs[2].question, questions_json[2].mcqs[2].choices[0].text, questions_json[2].mcqs[2].choices[1].text,  questions_json[2].mcqs[2].choices[2].text,  questions_json[2].mcqs[2].choices[3].text)),
+                    (new MCQ(questions_json[2].mcqs[3].question, questions_json[2].mcqs[3].choices[0].text, questions_json[2].mcqs[3].choices[1].text,  questions_json[2].mcqs[3].choices[2].text,  questions_json[2].mcqs[3].choices[3].text)),
+                    (new MCQ(questions_json[2].mcqs[4].question, questions_json[2].mcqs[4].choices[0].text, questions_json[2].mcqs[4].choices[1].text,  questions_json[2].mcqs[4].choices[2].text,  questions_json[2].mcqs[4].choices[3].text)),
                     [3, 2, 3, 1, 4]);
 
         this.yer_a_wizard = new SortingHat(`Yer a Wizard ${name}`,
@@ -78,7 +80,6 @@ class Quiz{ //Everything the Quiz does is in here
                     (new MCQ(`Your great-aunt has invited you over to her house to congratulate you on your admission and you're finally allowed to go into her secret garden. What would you look at first?`, `A silver tree with golden apples`, `Talking Toadstools`, `Statue with a twinkling eye`, `Luminous Pool with something in its depths`)), 
                     (new MCQ(`Right before you leave your home for Hogwarts, you parents show you four boxes. You get to pick one`, `A plain jet black box with a silver rune that you know to be the mark of Merlin.`, `A golden box with carved feet that warns secret knowledge and unbearable temptation lurk within.`, `A plain pewter box that says “I open only for the worthy."`, `A tortoiseshell box that sounds like something living is squeaking inside.`)),
                     (new MCQ(`There's a welcome party for the new students and you see four goblets placed before you. Which do you drink?`, `The golden potion that gives off bright sunspots that dance around the room.`, `A silvery, glittery potion that sparkles as if containing ground diamonds.`, `A thick potion that smells of plums and chocolate.`, `A black, inky potion that gives off fumes that make you see strange visions.`)));
-
         this.quizzes = [this.computer_commando, this.literature, this.language]; //Stores available quizzes
 
         if (coffeetime){ //coffeetime
