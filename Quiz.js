@@ -1,4 +1,6 @@
-let readline = require('readline-sync');
+const readline = require('readline-sync');
+const fs = require('fs')
+cat1 = JSON.parse(fs.readFileSync('questions.json'))
 //Hi cher there's a bonus feature for debugging purposes that unlocks everything along with unlimited passes. Just need to make sure the time is appropriate for coffee
 let coffeetime = false;
 let name = AskName();
@@ -48,12 +50,11 @@ class SortingHat{ //PERSONALITY QUIZ THAT TOOK TOO MUCH TIME TO MAKE
 
 class Quiz{ //Everything the Quiz does is in here
     constructor(){
-        this.computer_commando = new Category("Computer Commando", //This is the category name
-                    (new MCQ("The UNIX command ___ will copy the file", "cls", "cp", "md", "sudo")), //This is a question.
-                    (new MCQ("Which is the valid command prompt command that will list the files in your current working directory?", "ls", "dir", "cd", "cls")),
-                    (new MCQ("The command ____ performs the same function in BOTH Linux and Windows", "pwd", "cat", "del", "cd")),
-                    (new MCQ("Which of the following text editor when used in the terminal will open a new window in Linux?", "gedit", "Emacs", "Nano", "Vim")),
-                    (new MCQ("Which is the most secure way to transfer files across linux systems", "FTP", "telnet", "SSH", "rcp")),
+        this.computer_commando = new Category(cat1[0].category, //This is the category name
+                    (new MCQ(cat1[0].mcqs[0].question, cat1[0].mcqs[0].choices[0].text, cat1[0].mcqs[0].choices[1].text,  cat1[0].mcqs[0].choices[2].text,  cat1[0].mcqs[0].choices[3].text)),
+                    (new MCQ(cat1[0].mcqs[1].question, cat1[0].mcqs[1].choices[0].text, cat1[0].mcqs[1].choices[1].text,  cat1[0].mcqs[1].choices[2].text,  cat1[0].mcqs[1].choices[3].text)),
+                    (new MCQ(cat1[0].mcqs[2].question, cat1[0].mcqs[2].choices[0].text, cat1[0].mcqs[2].choices[1].text,  cat1[0].mcqs[2].choices[2].text,  cat1[0].mcqs[2].choices[3].text)),
+                    (new MCQ(cat1[0].mcqs[3].question, cat1[0].mcqs[3].choices[0].text, cat1[0].mcqs[3].choices[1].text,  cat1[0].mcqs[3].choices[2].text,  cat1[0].mcqs[3].choices[3].text)),
                     [2, 2, 4, 1, 3]); //Reference numbers when storing the answer strings
 
         this.literature = new Category("Languish in Literature",
@@ -78,7 +79,6 @@ class Quiz{ //Everything the Quiz does is in here
                     (new MCQ(`Your great-aunt has invited you over to her house to congratulate you on your admission and you're finally allowed to go into her secret garden. What would you look at first?`, `A silver tree with golden apples`, `Talking Toadstools`, `Statue with a twinkling eye`, `Luminous Pool with something in its depths`)), 
                     (new MCQ(`Right before you leave your home for Hogwarts, you parents show you four boxes. You get to pick one`, `A plain jet black box with a silver rune that you know to be the mark of Merlin.`, `A golden box with carved feet that warns secret knowledge and unbearable temptation lurk within.`, `A plain pewter box that says “I open only for the worthy."`, `A tortoiseshell box that sounds like something living is squeaking inside.`)),
                     (new MCQ(`There's a welcome party for the new students and you see four goblets placed before you. Which do you drink?`, `The golden potion that gives off bright sunspots that dance around the room.`, `A silvery, glittery potion that sparkles as if containing ground diamonds.`, `A thick potion that smells of plums and chocolate.`, `A black, inky potion that gives off fumes that make you see strange visions.`)));
-
         this.quizzes = [this.computer_commando, this.literature, this.language]; //Stores available quizzes
 
         if (coffeetime){ //coffeetime

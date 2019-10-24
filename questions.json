@@ -1,0 +1,133 @@
+[
+    {
+        "category": "Computer Commando",
+        "mcqs": [
+            {
+                "question": "The UNIX command ___ will copy the file",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "cls",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "cp",
+                        "check": true
+                    },
+                    {
+                        "id": 2,
+                        "text": "md",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "sudo",
+                        "check": false
+
+                    }
+                ]
+            },
+            {
+                "question": "Which is the valid command prompt command that will list the files in your current working directory?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "ls",
+                        "check": true
+                    },
+                    {
+                        "id": 1,
+                        "text": "dir",
+                        "check": false 
+                    },
+                    {
+                        "id": 2,
+                        "text": "cd",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "cls",
+                        "check": false 
+                    }
+                ]
+            },
+            {
+                "question": "The command _____ performs the same function in BOTH Unix and Windows",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "pwd",
+                        "check": false
+                    },
+                    {
+                        "id": 1,
+                        "text": "cat",
+                        "check": false
+                    },
+                    {
+                        "id": 2,
+                        "text": "del",
+                        "check": false
+                    },
+                    {
+                        "id": 3,
+                        "text": "cd",
+                        "check": true 
+                    }
+                ]
+            },
+            {
+                "question": "Which of the following text editor when used in the terminal will open a new window in Linux?",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "gedit",
+                        "check": true
+                    },
+                    {
+                        "id": 1,
+                        "text": "vim",
+                        "check": false 
+                    },
+                    {
+                        "id": 2,
+                        "text": "emacs",
+                        "check": false 
+                    },
+                    {
+                        "id": 3,
+                        "text": "nano",
+                        "check": false 
+                    }
+                ]
+            },
+            {
+                "question": "Which is the most secure way to transfer files across linux systems",
+                "choices": [
+                    {
+                        "id": 0,
+                        "text": "FTP",
+                        "check": false 
+                    },
+                    {
+                        "id": 1,
+                        "text": "telnet",
+                        "check": false 
+                    },
+                    {
+                        "id": 2,
+                        "text": "SSH",
+                        "check": true 
+                    },
+                    {
+                        "id": 3,
+                        "text": "rcp",
+                        "check": false
+                    }
+                ]
+            }
+        ]
+    }
+]
