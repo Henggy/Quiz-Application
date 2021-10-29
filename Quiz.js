@@ -1,7 +1,7 @@
 const readline = require('readline-sync');
 const fs = require('fs')
 questions_json = JSON.parse(fs.readFileSync('questions.json'))
-
+//Hi cher there's a bonus feature for debugging purposes that unlocks everything along with unlimited passes. Just need to make sure the time is appropriate for coffee
 let coffeetime = false;
 let name = AskName();
 if (name === 'Ex-Google Techlead'){ //coffeetime = true
